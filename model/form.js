@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../databse');
+const sequelize = require('../database');
 
 const FormData = sequelize.define('form_data', {
     estimator: DataTypes.STRING,
