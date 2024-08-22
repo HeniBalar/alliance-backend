@@ -8,6 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use('/form', formRoutes);
+
 app.get("/", (req, res) => {
     res.send('Alliance Backed')
 })
