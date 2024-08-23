@@ -2,10 +2,29 @@ const express = require('express');
 const router = express.Router();
 const FormData = require('../model/form');
 
+// router.post('/addData', async (req, res) => {
+//   try {
+//     const formData = await FormData.create(req.body);
+//     console.log("Form data saved successfully", formData)
+//     res.status(200).send({ message: 'Form data saved successfully', formData });
+//   } catch (err) {
+//     console.error('Failed to insert data:', err);
+//     res.status(500).send({ error: 'Failed to save form data' });
+//   }
+// });
+
 router.post('/addData', async (req, res) => {
   try {
-    const formData = await FormData.create(req.body);
-    console.log("Form data saved successfully", formData)
+    const sanitizedData = { ...req.body };
+
+    if (Array.isArray(sanitizedData.customer_type)) {
+      sanitizedData.customer_type = sanitizedData.customer_type.map(item => item.name).join(',');
+    }
+    if (Array.isArray(sanitizedData.job_and_work_type)) {
+      sanitizedData.job_and_work_type = sanitizedData.job_and_work_type.map(item => item.name).join(',');
+    }
+    const formData = await FormData.create(sanitizedData);
+    console.log("Form data saved successfully", formData);
     res.status(200).send({ message: 'Form data saved successfully', formData });
   } catch (err) {
     console.error('Failed to insert data:', err);

@@ -58,6 +58,8 @@ const FormData = sequelize.define('form_data', {
     scope_work: DataTypes.STRING,
     customer_type: DataTypes.STRING,
     job_and_work_type: DataTypes.STRING,
+    // customer_type: DataTypes.ARRAY(DataTypes.STRING),
+    // job_and_work_type: DataTypes.ARRAY(DataTypes.STRING),
     epa_id: DataTypes.STRING(50),
     haz_manifest: DataTypes.DECIMAL(10, 2),
     non_haz_man: DataTypes.DECIMAL(10, 2),
