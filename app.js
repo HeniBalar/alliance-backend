@@ -1,10 +1,12 @@
 const express = require('express');
 const dotenv = require("dotenv")
+const cors = require('cors');
 dotenv.config()
 const bodyParser = require('body-parser');
 const formRoutes = require('./controller/form');
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/form', formRoutes);
