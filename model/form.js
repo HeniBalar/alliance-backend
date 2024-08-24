@@ -2,8 +2,8 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../database');
 
 const FormData = sequelize.define('form_data', {
-    estimator: DataTypes.STRING,
-    proposal: DataTypes.STRING,
+    estimator: DataTypes.TEXT,
+    proposal: DataTypes.TEXT,
     job_walkDate: DataTypes.STRING,
     job_walkTime: DataTypes.STRING,
     job_name: DataTypes.STRING,
@@ -55,13 +55,13 @@ const FormData = sequelize.define('form_data', {
     ac_company3: DataTypes.STRING,
     ac_phone3: DataTypes.STRING,
     ac_email3: DataTypes.STRING,
-    scope_work: DataTypes.STRING,
+    scope_work: DataTypes.TEXT,
     customer_type: DataTypes.STRING,
     job_and_work_type: DataTypes.STRING,
     epa_id: DataTypes.STRING,
-    haz_manifest: DataTypes.STRING,
-    non_haz_man: DataTypes.STRING,
-    non_haz_man_1pr: DataTypes.STRING,
+    haz_manifest: DataTypes.TEXT,
+    non_haz_man: DataTypes.TEXT,
+    non_haz_man_1pr: DataTypes.TEXT,
     trash: DataTypes.STRING,
     project_type: DataTypes.STRING,
     building_size: DataTypes.STRING,
@@ -70,15 +70,15 @@ const FormData = sequelize.define('form_data', {
     no_of_dwelling_units: DataTypes.STRING,
     present_prior_use: DataTypes.STRING,
     procedure: DataTypes.STRING,
-    survey: DataTypes.STRING,
+    survey: DataTypes.TEXT,
     contract_amount: DataTypes.STRING,
     lock_box_combo: DataTypes.STRING,
-    instruction_notes: DataTypes.STRING,
+    instruction_notes: DataTypes.TEXT,
 },
-    // {
+    {
     //   tableName: 'form_data',
-    //   timestamps: false
-    // }
+      timestamps: false
+    }
 );
 
 module.exports = FormData;

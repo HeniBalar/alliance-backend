@@ -21,5 +21,11 @@ sequelize.sync({ force: false }).then(() => {
     console.error('Unable to connect to the database : ', error);
 });
 
+// sequelize.sync({ alter: true }).then(() => {
+//     console.log('DB Connected and updated ....');
+// }).catch((error) => {
+//     console.error('Unable to connect to the database: ', error);
+// });
+
 module.exports = sequelize
 
