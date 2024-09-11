@@ -10,7 +10,7 @@ const sequelize = new Sequelize(
         dialect: 'mysql',
         dialectModule: require('mysql2'),
         define: {
-            freezeTableName: true
+            freezeTableName: true 
         }
     }
 );
