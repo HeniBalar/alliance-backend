@@ -23,8 +23,10 @@ router.get('/searchAccounts', async (req, res) => {
             where: {
                 account_name: {
                     [Op.like]: `%${searchTerm}%`,
-                }
-            }
+                },
+                account_type: 'Actual - Customer'
+            },
+            limit: 5
         });
 
         res.status(200).json(accounts);
